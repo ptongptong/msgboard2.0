@@ -1,0 +1,29 @@
+<?php
+  SESSION_start();
+  $code='';
+  $width=100;
+  $height=30;
+  $image=imagecreatetruecolor($width,$height);
+  $white=imagecolorallocate($image,255,255,255);
+  imagefilledrectangle($image,0,0,$width,$height,$white);
+  //底片
+  for ($i=0;$i<4;$i++){
+    $fontsize=6;
+    $fontcolor=imagecolorallocate($image,rand(0,120),rand(0,120),rand(0,120));
+    $fontcontent=rand(0,9);
+    $x=($i*100/4)+rand(5,10);
+    $y=rand(5,10);
+    imagestring($image,$fontsize,$x,$y,$fontcontent,$fontcolor);
+    $code.=$fontcontent;
+  }
+  $_SESSION['vcode']=$code;
+  //数字
+  for ($i=0;$i<200;$i++){
+    $color=imagecolorallocate($image,rand(75,200),rand(75,200),rand(75,200));
+    imagesetpixel($image,rand(1,99),rand(1,29),$color);
+  }
+  //干扰点
+  header('content-type:image/png');
+  imagepng($image);
+  //imagedestroy($image);
+?>

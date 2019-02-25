@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.0.0.min.js"></script> 
+    <style>
+        body{background-image:url('winter.jpg');}
+        h1{text-align:center;}
+        .say{width:500px;margin:0 auto;}
+        #list { margin: 0 auto; text-align: left; width: 540px;}
+        a {color:black;}
+        .logout{color:#369;float:right;}
+       
+        .clearfix:after { content:"."; display:block; height:0; clear:both; visibility:hidden;}
+        .box { background:#fff; margin-top:10px; position: relative; width: 540px; padding: 20px 0}
+        .content { float: left; width: 440px; word-wrap:break-word;}
+        .close { display: block; top:0px; right: 0px; width: 28px; height: 28px; border: 1px solid #eee; position: absolute; background: #f2f4f7; line-height: 27px; text-align: center;}
+        .head { float:left; width: 60px; height: 60px; margin:0px 10px 0px 10px;}
+        .name { color: #369; }
+        .time { color:gray; height: 20px; }
+        .id{display:block;margin:0px;color:black;}
+        
+        .reply-box { padding: 10px 0px 0px 10px;float: left; width: 490px;word-wrap:break-word;}
+        .head2 {float: left; width: 30px; height: 30px; margin-right: 10px;margin-top:10px;}
+        .time2 { color:gray; margin-top: 3px; line-height: 16px; position: relative;left:40px;}
+        .reply-del { display: inline-block; color: #369; height: 20px;  position: absolute; bottom: 0px; right: 10px;float:right;}
+
+        .text-box{width:540px;}
+        .text-box .comment { border: 1px solid #eee; display: block; height: 15px; width: 428px; padding: 5px; margin-left:5px; resize: none; color: #ccc}
+        .text-box-on .comment{ height: 50px; color: #333;}
+        .text-box .btn { font-size: 12px; font-weight: bold; display: none; float: right; width: 65px; height: 25px; border: 1px solid #0C528D; color: #fff; background: #4679AC;}
+        .text-box-on .btn{ display: inline;}
+        .text-box .btn-off { border: 1px solid #ccc; color: #ccc; background: #F7F7F7;}
+        .text-box .word{ display: none; float: right; margin: 7px 10px 0 0; color: #666;}
+        .text-box-on .word{ display: inline;}
+    </style>
+    <script src="msgboard.js"></script>
+</head>
+<body>
+    <h1>留言板</h1>
+    <hr/><br/><br/><hr/>
+    <button class="logout" id="logout">退出登录</button>
+    <form class="say">
+        <p>我要留言:</p>
+        <textarea id=msg cols="70" rows="5"> </textarea>
+        <button id="submit">提交</button>
+    </form>
+    <div id="list"> 
+    </div>   
+</body>
+</html>
